@@ -1,7 +1,5 @@
 package com.test.exam04;
 
-import com.test.exam04.OuterClass.InnerClass;
-
 public class InnerClassTest {
     
     public static void main(String[] args) {

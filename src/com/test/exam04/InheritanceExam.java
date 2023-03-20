@@ -6,7 +6,7 @@ class Parent {
     int a = 3;
     int b = 4;
     
-    public void parentPrint(){
+    protected void parentPrint(){
         System.out.println("부모 클래스");
     }
 }
