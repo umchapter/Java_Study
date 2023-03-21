@@ -2,6 +2,8 @@ package com.test.exam05;
 
 import java.util.Map;
 import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
 
 class GStack<T> {
     int tos;
@@ -52,6 +54,22 @@ public class GenericTest {
         map.put("name", "양흠례");
 
         System.out.println(map.get("userid"));
+
+        List<Map<String, String>> list = new ArrayList<>();
+
+        list.add(map);
+
+        int a =4;
+
+        String aa = Integer.toString(a);
+
+        String b = "5";
+
+        int c = Integer.parseInt(b);
+
+        System.out.println(aa);
+        System.out.println(c + 1);
+
         
     }
 }
