@@ -9,9 +9,9 @@ public class MemberManager {
         
         List<Member> list = new ArrayList<>();
 
-        // list.add(new Member("warlord","양금자",82));
-        // list.add(new Member("conqueror","최병식",67));
-        // list.add(new Member("handsomeBong","봉함길",76));
+        list.add(new Member("warlord","양금자",82));
+        list.add(new Member("conqueror","최병식",67));
+        list.add(new Member("handsomeBong","봉함길",76));
 
         list.add(new Member.Builder()
             .userid("KillerQueen")
@@ -23,7 +23,7 @@ public class MemberManager {
         list.add(new Member.Builder()
             .userid("ToneDeff")
             .username("김석도")
-            .age(0)
+            .age(101)
             .build()
         );
 
@@ -38,6 +38,8 @@ public class MemberManager {
         // member.setUserId("stella");
         // member.setUserName("김철수");
         // member.setAge(23);
+
+        list.stream().map(n -> n.getUserName()).sorted().forEach(System.out::println);
         
     }
 }
