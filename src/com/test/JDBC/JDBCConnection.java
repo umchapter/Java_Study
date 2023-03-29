@@ -60,9 +60,9 @@ public class JDBCConnection {
         if(con != null) {
             con.close();
         }
-        // // if(ds != null) {
-        // //     ds.close();
-        // // }
+        if(ds != null) {
+            ds.close();
+        }
         
         for(Member member:list) {
             System.out.println("아이디 = " + member.getUserId() + "\t"

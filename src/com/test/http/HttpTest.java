@@ -38,7 +38,7 @@ class TestHttpRequest {
 
             // Request
             DataOutputStream wr = new DataOutputStream(connection.getOutputStream()); // 위에서 set한 output get으로 가져옴
-            wr.write(parameters.getBytes("utf-8"));
+            wr.write(parameters.getBytes("UTF-8"));
             wr.flush();
             wr.close();
 

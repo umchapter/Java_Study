@@ -43,6 +43,5 @@ public class CheckTime {
             sum2 += m;
         }
         System.out.println(sum2);
-        
     }
 }
