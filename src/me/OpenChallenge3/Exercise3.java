@@ -1,8 +1,10 @@
 package me.OpenChallenge3;
 
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 
 public class Exercise3 {
@@ -140,30 +142,118 @@ public class Exercise3 {
                               
         //     i++;
         // }
+        
+        // 7-2. or 스트링 형식으로 이중 반복. 뭐가 더 빠른지는 모르겠음
+        // int i = 1;
 
-        // or 스트링 형식으로 이중 반복. 뭐가 더 빠른지는 모르겠음
-        int i = 1;
+        // while(i<100) {
+        //     int clap = 0;
+        //     String callNum = String.valueOf(i);
 
-        while(i<100) {
-            int clap = 0;
-            String callNum = String.valueOf(i);
+        //     for(int j = 0; j<callNum.length(); j++) {
+        //         char chr = callNum.charAt(j);
+        //         if((chr == '3') | (chr == '6') | (chr == '9')) {
+        //             clap++;
+        //         }                
+        //     }
 
-            for(int j = 0; j<callNum.length(); j++) {
-                char chr = callNum.charAt(j);
-                if((chr == '3') | (chr == '6') | (chr == '9')) {
-                    clap++;
-                }                
+        //     if(clap>0) {
+        //         System.out.println(i + " 박수 " + "짝".repeat(clap));
+        //         }
+                                
+        //     i++;
+        // }
+
+        // 8. 두 개의 배열에서 입력 받은 값으로 연결된 값 출력
+        // String[] course = { "Java", "C++", "HTML5", "컴퓨터구조", "안드로이드" };
+        // int[] score = {95, 88, 76, 62, 55};
+
+        // Scanner scanner = new Scanner(System.in);
+
+        // while(true) {
+        //     System.out.print("과목 이름>>");
+        //     String subjectName = scanner.nextLine();
+
+        //     if(subjectName.equals("그만")) {
+        //         break;
+        //     }
+            
+        //     for(int i=0;i<=course.length;i++) {
+        //         if(i==course.length) {
+        //             System.out.println("없는 과목입니다.");
+        //             break;
+        //         }
+                
+        //         if(course[i].equals(subjectName)) {
+        //             System.out.printf("%s의 점수는 %d", subjectName, score[i]);
+        //             System.out.println();
+        //             break;
+        //         } else {
+        //             continue;
+        //         }
+        //     }
+        // }
+        // scanner.close();
+
+        // 9. 2개의 정수를 입력 받아 곱을 구함. 실수 예외 처리.
+        // Scanner scanner = new Scanner(System.in);
+        // while(true) {            
+        //     System.out.print("곱하고자 하는 두 수 입력>>");
+
+        //     try{
+        //     int n = scanner.nextInt();
+        //     int m = scanner.nextInt();
+            
+        //     System.out.print(n + " x " + m + " = " + n*m);
+
+        //     break;
+
+        //     } catch(InputMismatchException e) {
+        //         System.out.println("실수는 입력하면 안됩니다.");
+        //         scanner.nextLine();
+        //     }
+        // }
+        // scanner.close();
+
+        // 10. 가위바위보 게임. 컴퓨터 랜덤하게 가위바위보 냄.
+        Scanner scanner = new Scanner(System.in);
+        String[] rspArray = { "가위", "바위", "보"};
+        
+        System.out.println("컴퓨터와 가위 바위 보 게임을 합니다.");
+        while(true) {
+            String result = "컴퓨터가 이겼습니다.";
+            System.out.print("가위 바위 보!>>");
+            String rspInput = scanner.nextLine();
+
+            if(rspInput.equals("그만")) {
+                break;
             }
 
-            if(clap>0) {
-                System.out.println(i + " 박수 " + "짝".repeat(clap));
-                }
-                                
-            i++;
+            if(!Arrays.asList(rspArray).contains(rspInput)) {
+                System.out.println("다시 입력하세요");
+                continue;
+            }
+
+            int rspIndex = (int)(Math.random()*3);
+            String rspComputer = rspArray[rspIndex];
+
+            if(rspInput.equals(rspComputer)) {
+                result = "비겼습니다.";
+            }
+
+            if(rspInput.equals("가위") && rspComputer.equals("보")) {
+                result = "사용자가 이겼습니다.";
+            } else if(rspInput.equals("바위") && rspComputer.equals("가위")) {
+                result = "사용자가 이겼습니다";
+            } else if(rspInput.equals("보") && rspComputer.equals("바위")) {
+                result = "사용자가 이겼습니다";
+            }
+            
+            System.out.printf("사용자 = %s , 컴퓨터 = %s, %s", rspInput, rspComputer, result);
+            System.out.println();
+    
         }
-
-
+        scanner.close();
+    
     }
-    
-    
 }
