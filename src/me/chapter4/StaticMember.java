@@ -14,6 +14,8 @@ class CurrencyConverter {
     }
 
     public static void setRate(double r) { // -> static 메소드는 static 필드를 사용할 수 있음. 
+        // static 메소드는 객체와 함께 생성되는 non-static 멤버를 사용할 수 없음.
+        // 반대로, non-static 메소드는 static 멤버 사용 가능
         rate = r; // 환율 설정. 원/$1
     }
 
