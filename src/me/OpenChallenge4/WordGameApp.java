@@ -40,6 +40,7 @@ public class WordGameApp {
                 next %= players.length;
             } else {
                 System.out.print(players[next].getName() + "이(가) 졌습니다.");
+                System.out.println("평균 입력 시간 :" + players[next].getAverageInputInterval() + "ms");
                 break;
             }
         }
