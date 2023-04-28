@@ -3,9 +3,9 @@ package me.OpenChallenge4;
 import java.util.Scanner;
 
 class Circle {
-    private double x;
-    private double y;
-    private int radius;
+    protected double x;
+    protected double y;
+    protected int radius;
     
     public Circle(double x, double y, int radius) {
         this.x = x;
@@ -29,9 +29,14 @@ public class CircleManager {
             int radius = scanner.nextInt();
             c[i] = new Circle(x, y, radius);
         }
+
+        Circle big = new Circle(0, 0, 0);
         for(Circle j : c) {
-            j.show();
+            if(j.radius > big.radius) {
+                big = j;
+            }
         }
+        System.out.printf("가장 면적이 큰 원은 (%.1f,%.1f)%d", big.x, big.y, big.radius);
         scanner.close();
     }
 }
