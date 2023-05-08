@@ -25,16 +25,33 @@ class Day {
 
 
 public class MonthSchedule {
+    public Day[] monthDays;
     
-    public static void main(String[] args) {
-
-        Scanner scanner = new Scanner(System.in);
-
-        Day[] monthDays = new Day[30];
+    public MonthSchedule(int days) {
+        this.monthDays = new Day[days];
 
         for (int i=0; i<monthDays.length; i++) {
             monthDays[i] = new Day();
         }
+    }
+
+    public void input(int day, String work) {
+        this.monthDays[day].set(work);
+    }
+
+    public void view(int day) {
+        System.out.printf("%d일의 할일은 ", day);
+        this.monthDays[day].show();
+        System.out.println("");
+    }
+
+    public boolean finish() {
+        System.out.println("프로그램을 종료합니다");
+        return false;
+    }
+
+    public void run() {
+        Scanner scanner = new Scanner(System.in);
 
         System.out.println("이번달 스케쥴 관리 프로그램.");
         
@@ -49,18 +66,17 @@ public class MonthSchedule {
                 System.out.print("할일(빈칸없이입력)?");
                 String work = scanner.next();
 
-                monthDays[day].set(work);                           
+                this.input(day, work);
+                         
                 
             }else if (order == 2) {
                 System.out.print("날짜(1~30)?");
                 int day = scanner.nextInt();
 
-                System.out.printf("%d의 할일은", day);
-                monthDays[day].show();
-                System.out.println("");
+                this.view(day);
 
             } else if (order == 3) {
-                System.out.println("프로그램을 종료합니다");
+                this.finish();
                 break;
 
             } else {
@@ -69,5 +85,11 @@ public class MonthSchedule {
         }
 
         scanner.close();
+    }
+
+    public static void main(String[] args) {
+
+        MonthSchedule april = new MonthSchedule(31);
+        april.run();
     }
 }
