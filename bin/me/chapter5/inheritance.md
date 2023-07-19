@@ -190,3 +190,5 @@ public class ConstructorEx2 {
 ```
 * SuperEx 예제
 
+## 5. 업캐스팅과 instanceof 연산자
+* 캐스팅(casting)
