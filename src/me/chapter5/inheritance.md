@@ -418,7 +418,7 @@ shape.draw(); // Line
 #### 2. 슈퍼 클래스 메소드의 접근 지정자보다 *접근의 범위를 좁혀* 오버라이딩 할 수 없음
 
 * 접근 지정자는 public, protected, default, private 순으로 접근의 범위가 좁아짐
-* 슈퍼 클래스에 protected로 선언된 메소드는 서브 클래스에서 protected나 public으로만 오버라이딩할 수 있고, public으로 선언된 메소드는 서브 크랠스에서 public으로만 오버라이딩할 수 있음
+* 슈퍼 클래스에 protected로 선언된 메소드는 서브 클래스에서 protected나 public으로만 오버라이딩할 수 있고, public으로 선언된 메소드는 서브 클래스에서 public으로만 오버라이딩할 수 있음
 
 #### 3. static이나 private 또는 final로 선언된 메소드는 서브 클래스에서 오버라이딩 할 수 없음
 
@@ -575,7 +575,7 @@ abstract class Line extends Shape { // 추상 클래스. draw()를 그대로 상
 }
 ```
 
-### 추상 클래스의 구현과 못적
+### 추상 클래스의 구현과 목적
 
 * 추상 클래스의 구현이란, 슈퍼 클래스에 선언된 모든 추상 메소드를 서브 클래스에서 오버라이딩하여 실행 가능한 코드로 구현하는 것을 말함
 
